@@ -3,13 +3,13 @@
     <li>
       <strong><%= movie.name %></strong>
       rating: <%= movie.rating %>
-      total gross: <%= number_to_currency(movie.total_gross, precision: 0) %>
+      total gross: <%= total_gross(movie) %>
     </li>
     <p>
-      <%= movie.description %>
+      <%= truncate(movie.description, length: 40, separator: ' ') %>
     </p>
     <p>
-      <%= movie.released_on %>
+      <%= year_of(movie)%>
     </p>
   <% end %>
 </ul>
